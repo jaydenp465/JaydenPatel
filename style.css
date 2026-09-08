@@ -35,16 +35,14 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Home page only: lock header + hero + footer to exactly one viewport,
-   no matter the footer's actual height, using flex to divide the space
-   instead of guessing at a fixed hero height. */
+/* Home page only: header + hero fill exactly one viewport, no footer,
+   so the hero photo runs to the bottom edge of the screen. */
 body.home {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-body.home header.site,
-body.home footer.site {
+body.home header.site {
   flex-shrink: 0;
 }
 body.home main {

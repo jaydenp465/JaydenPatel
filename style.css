@@ -73,6 +73,9 @@ header.site .wrap {
   flex-wrap: wrap;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+  max-width: none;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 
 .brand {
@@ -123,6 +126,9 @@ footer.site .wrap {
   gap: 0.5rem;
   font-size: 0.85rem;
   color: var(--ink-faint);
+  max-width: none;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 footer.site a { color: var(--ink-muted); }
 
@@ -425,7 +431,7 @@ h1.display {
 
 .hero-splash {
   position: relative;
-  min-height: 640px;
+  min-height: calc(100vh - 69px);
   display: flex;
   align-items: center;
   justify-content: center;

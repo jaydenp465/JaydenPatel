@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Projects — Jayden Patel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=4">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">Jayden Patel</a>
+    <nav class="primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="experience.html">Experience</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="resume.html">Resume</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap page-head">
+    <span class="kicker">Selected work</span>
+    <h1>Projects</h1>
+    <p class="lede">Independent work outside of internships and coursework.</p>
+  </div>
+
+  <div class="wrap">
+
+    <div class="project">
+      <div class="media">
+        <div class="figure-row">
+          <div class="figure" style="aspect-ratio: 4/3;">
+            <span class="fig-num">fig. 01</span>
+            <p>Arm assembly photo</p>
+          </div>
+          <div class="figure" style="aspect-ratio: 4/3;">
+            <span class="fig-num">fig. 02</span>
+            <p>Inverse kinematics solver, target vs. solved end-effector position</p>
+          </div>
+          <div class="figure" style="aspect-ratio: 4/3;">
+            <span class="fig-num">fig. 03</span>
+            <p>PID step response during tuning</p>
+          </div>
+        </div>
+      </div>
+      <div class="body">
+        <span class="project-eyebrow">Personal project &middot; robotics</span>
+        <h3>3-DOF robotic arm</h3>
+        <div class="metrics-row" style="margin-bottom: 0.9rem;">
+          <span class="badge">3 degrees of freedom</span>
+          <span class="badge">forward + inverse kinematics</span>
+          <span class="badge">PID control</span>
+        </div>
+        <p style="color: var(--ink-muted);">
+          A three-degree-of-freedom robotic arm built to learn hardware and
+          control from the ground up. Covers forward and inverse
+          kinematics for the arm's joint chain, and a PID control loop
+          tuned to drive the physical arm to commanded positions.
+        </p>
+        <!-- TODO: replace with your specific parts list and software stack -->
+        <p class="tools" style="font-style: italic; color: var(--ink-faint);">Add your parts list and software stack here.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="media">
+        <div class="figure" style="aspect-ratio: 16/10; margin-bottom: 0.75rem;">
+          <span class="fig-num">fig. 01</span>
+          <p>Demo video — LEDs indicating fan speed live</p>
+        </div>
+        <svg viewBox="0 0 340 150" width="100%" height="auto" role="img" aria-labelledby="circuitTitle circuitDesc" style="border: 1px solid var(--line); border-radius: 4px; background: var(--bg-card);">
+          <title id="circuitTitle">Block diagram of the fan-speed indicator circuit</title>
+          <desc id="circuitDesc">Sensor connects to a microcontroller, which drives an RGB LED, arranged left to right.</desc>
+          <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--blue)"/>
+            </marker>
+          </defs>
+          <rect x="14" y="55" width="88" height="42" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+          <text x="58" y="80" text-anchor="middle" font-family="var(--font-mono)" font-size="12" fill="var(--ink)">sensor</text>
+          <line x1="102" y1="76" x2="146" y2="76" stroke="var(--blue)" stroke-width="2" marker-end="url(#arrow)"/>
+          <rect x="150" y="55" width="88" height="42" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+          <text x="194" y="80" text-anchor="middle" font-family="var(--font-mono)" font-size="12" fill="var(--ink)">MCU</text>
+          <line x1="238" y1="76" x2="282" y2="76" stroke="var(--blue)" stroke-width="2" marker-end="url(#arrow)"/>
+          <rect x="286" y="55" width="46" height="42" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+          <text x="309" y="80" text-anchor="middle" font-family="var(--font-mono)" font-size="10" fill="var(--ink)">RGB</text>
+        </svg>
+      </div>
+      <div class="body">
+        <span class="project-eyebrow">Personal project &middot; embedded</span>
+        <h3>Fan-speed color indicator</h3>
+        <div class="metrics-row" style="margin-bottom: 0.9rem;">
+          <span class="badge">speed sensing</span>
+          <span class="badge">embedded logic</span>
+        </div>
+        <p style="color: var(--ink-muted);">
+          A circuit that senses a fan's rotational speed and lights an RGB
+          LED a different color for each speed range — a small hands-on
+          project in sensing and embedded logic.
+        </p>
+        <!-- TODO: replace with your specific parts list and software stack -->
+        <p class="tools" style="font-style: italic; color: var(--ink-faint);">Add your parts list and software stack here.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <section class="wrap section">
+    <h2>In progress</h2>
+    <div class="project-inprogress">
+      <div>
+        <h3>Senior design capstone</h3>
+        <p>Project scope to be assigned.</p>
+      </div>
+      <span class="badge progress">in progress</span>
+    </div>
+    <div class="project-inprogress">
+      <div>
+        <h3>Applications programming &amp; hardware</h3>
+        <p>Project scope to be assigned.</p>
+      </div>
+      <span class="badge progress">in progress</span>
+    </div>
+    <div class="project-inprogress">
+      <div>
+        <h3>AI / machine learning</h3>
+        <p>Project scope to be assigned.</p>
+      </div>
+      <span class="badge progress">in progress</span>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>&copy; 2026 Jayden Patel</span>
+    <span><a href="mailto:Jayden.Patel@utexas.edu">Jayden.Patel@utexas.edu</a> · <a href="https://www.linkedin.com/in/jaydenpatel1">LinkedIn</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

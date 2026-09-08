@@ -1,0 +1,508 @@
+/* ============================================
+   Jayden Patel — portfolio
+   Design language: engineering blueprint.
+   Deep technical blue, hairline rules, dimension-
+   line details. Left-aligned, quiet, functional.
+   ============================================ */
+
+:root {
+  --bg: #F7F8FA;
+  --bg-card: #FFFFFF;
+  --ink: #161A1F;
+  --ink-muted: #5B6470;
+  --ink-faint: #8A93A0;
+  --line: #D8DEE4;
+  --line-strong: #B7C0CB;
+  --blue: #1D4E89;
+  --blue-deep: #123054;
+  --blue-tint: #E8EFF6;
+  --font-sans: "IBM Plex Sans", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  --container: 920px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+.wrap {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ---------- header / nav ---------- */
+
+header.site {
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+}
+
+header.site .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 68px;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.brand {
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.brand:hover { text-decoration: none; }
+
+nav.primary {
+  display: flex;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+}
+
+nav.primary a {
+  color: var(--ink-muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+nav.primary a:hover {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom-color: var(--line-strong);
+}
+nav.primary a.active {
+  color: var(--ink);
+  border-bottom-color: var(--blue);
+}
+
+/* ---------- footer ---------- */
+
+footer.site {
+  border-top: 1px solid var(--line);
+  margin-top: 4rem;
+}
+footer.site .wrap {
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+}
+footer.site a { color: var(--ink-muted); }
+
+/* ---------- generic layout ---------- */
+
+main { display: block; }
+
+.page-head {
+  padding: 4.5rem 0 3rem;
+}
+.page-head h1 {
+  margin: 0 0 0.75rem;
+}
+.page-head p.lede {
+  color: var(--ink-muted);
+  max-width: 60ch;
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+h1 {
+  font-size: 3.25rem;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.25rem;
+}
+h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+}
+p { max-width: 68ch; }
+p.wide { max-width: none; }
+
+.section {
+  padding: 3.5rem 0;
+  border-top: 1px solid var(--line);
+}
+.section:first-of-type { border-top: none; }
+
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--blue);
+  display: block;
+  margin-bottom: 0.9rem;
+}
+
+.group-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+  display: block;
+  margin-bottom: 0.65rem;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+  letter-spacing: 0.01em;
+}
+
+/* ---------- spec-sheet style list (home highlights, resume entries) ---------- */
+
+.spec-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.spec-item {
+  position: relative;
+  border-left: 2px solid var(--line-strong);
+  padding-left: 1.25rem;
+}
+.spec-item::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 7px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--blue);
+  border: 2px solid var(--bg);
+}
+.spec-item .spec-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 0.35rem;
+}
+.spec-item .spec-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.spec-item h3 { margin: 0; }
+.spec-item .role {
+  color: var(--ink-muted);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.spec-item .metrics-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+.spec-item ul {
+  list-style: none;
+  margin: 0.65rem 0 0;
+  padding-left: 0;
+}
+.spec-item li {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 0.45rem;
+  max-width: 68ch;
+  line-height: 1.65;
+}
+.spec-item li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.75em;
+  width: 6px;
+  height: 1.5px;
+  background: var(--line-strong);
+}
+.spec-list { gap: 2.25rem; }
+
+.org-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: 4px;
+  background: var(--blue-tint);
+  color: var(--blue-deep);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+}
+
+/* ---------- badges ---------- */
+
+.badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 2px 8px;
+  border-radius: 3px;
+  background: var(--blue-tint);
+  color: var(--blue-deep);
+  border: 1px solid var(--line);
+}
+.badge.progress {
+  background: #FFF7E8;
+  color: #7A4E00;
+  border-color: #F0DFB8;
+}
+
+/* ---------- figure placeholder (blueprint drop-zone) ---------- */
+
+.figure {
+  position: relative;
+  background: var(--blue-tint);
+  border: 1px dashed var(--line-strong);
+  border-radius: 4px;
+  padding: 1.25rem;
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.figure .fig-num {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--ink-faint);
+}
+.figure p {
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: 0.85rem;
+  max-width: 32ch;
+}
+.figure-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+}
+
+/* ---------- project cards ---------- */
+
+.project {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 2rem;
+  align-items: start;
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--line);
+}
+.project:first-of-type { border-top: none; padding-top: 0; }
+.project .body h3 { font-size: 1.3rem; }
+.project .tools {
+  margin-top: 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+}
+
+.project-inprogress {
+  border-top: 1px solid var(--line);
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+.project-inprogress h3 { font-size: 1rem; margin: 0; }
+.project-inprogress p { margin: 0.25rem 0 0; color: var(--ink-muted); font-size: 0.9rem; }
+
+/* ---------- buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid var(--blue);
+  color: var(--blue-deep);
+  padding: 0.55rem 1.1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.btn:hover {
+  background: var(--blue-tint);
+  text-decoration: none;
+}
+
+/* ---------- contact ---------- */
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-top: 1.5rem;
+}
+.contact-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: baseline;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.9rem;
+}
+.contact-row .label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-faint);
+  width: 90px;
+  flex-shrink: 0;
+}
+
+/* ---------- hero (home page) ---------- */
+
+.hero {
+  padding: 5.5rem 0 5rem;
+}
+h1.display {
+  font-size: clamp(3rem, 7vw, 5.25rem);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.hero-splash {
+  position: relative;
+  min-height: 640px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: #fff;
+  background-image:
+    linear-gradient(160deg, rgba(10, 22, 40, 0.7), rgba(6, 13, 23, 0.6)),
+    url('images/earth-sunrise-from-space-orange-and-blue-horizon-photo.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.hero-splash-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
+.hero-splash .kicker {
+  color: #A9C3E0;
+  margin-bottom: 1.25rem;
+}
+.hero-splash h1.display {
+  color: #fff;
+}
+.hero-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+.hero-nav a {
+  color: #C7D3E0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+.hero-nav a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ---------- skills / coursework groups ---------- */
+
+.skill-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* ---------- project eyebrow ---------- */
+
+.project-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--blue);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 720px) {
+  h1 { font-size: 2.25rem; }
+  .project { grid-template-columns: 1fr; }
+  .hero-row { flex-direction: column; }
+  .hero-visual { width: 100% !important; }
+}

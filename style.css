@@ -35,6 +35,28 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Home page only: lock header + hero + footer to exactly one viewport,
+   no matter the footer's actual height, using flex to divide the space
+   instead of guessing at a fixed hero height. */
+body.home {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+body.home header.site,
+body.home footer.site {
+  flex-shrink: 0;
+}
+body.home main {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+body.home .hero-splash {
+  flex: 1;
+  min-height: 0;
+}
+
 a {
   color: var(--blue);
   text-decoration: none;
@@ -431,7 +453,7 @@ h1.display {
 
 .hero-splash {
   position: relative;
-  min-height: calc(100vh - 69px);
+  min-height: 480px;
   display: flex;
   align-items: center;
   justify-content: center;

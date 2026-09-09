@@ -248,6 +248,26 @@ p.wide { max-width: none; }
   background: var(--blue);
   border: 2px solid var(--bg);
 }
+.spec-item.no-marker {
+  border-left: none;
+  padding-left: 0;
+}
+.spec-item.no-marker::before {
+  display: none;
+}
+
+.spec-item.spec-card {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1.5rem 1.75rem;
+  background: var(--bg-card);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+.spec-item.spec-card:hover {
+  border-color: var(--blue);
+  box-shadow: 0 6px 20px rgba(29, 78, 137, 0.12);
+  transform: translateY(-2px);
+}
 .spec-item .spec-meta {
   display: flex;
   justify-content: space-between;
@@ -300,16 +320,80 @@ p.wide { max-width: none; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
+  width: 44px;
+  height: 44px;
   flex-shrink: 0;
-  border: 1px solid var(--line-strong);
-  border-radius: 4px;
+  border: 1px dashed var(--line-strong);
+  border-radius: 6px;
   background: var(--blue-tint);
   color: var(--blue-deep);
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   font-weight: 500;
+  overflow: hidden;
+}
+.org-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.org-mark.has-logo {
+  width: auto;
+  height: 48px;
+  border: none;
+  background: none;
+  padding: 0;
+}
+.org-mark.has-logo img {
+  width: auto;
+  height: 100%;
+  max-width: 140px;
+  object-fit: contain;
+}
+
+/* ---------- experience cards: logo/meta left, role + bullets right ---------- */
+
+.exp-card {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2rem;
+}
+.exp-card .exp-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.exp-card .exp-left h3 {
+  font-size: 1.05rem;
+}
+.exp-card .exp-left .org-mark {
+  margin-top: 1rem;
+  width: 56px;
+  height: 56px;
+  font-size: 0.85rem;
+}
+.exp-card .exp-left .org-mark.has-logo {
+  width: 100%;
+  height: 96px;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.exp-card .exp-left .org-mark.has-logo img {
+  max-width: 180px;
+}
+.exp-card .exp-right .metrics-row {
+  margin-bottom: 0.75rem;
+}
+
+@media (max-width: 720px) {
+  .exp-card {
+    grid-template-columns: 1fr;
+  }
+  .exp-card .exp-left .org-mark {
+    margin-top: 0.5rem;
+  }
 }
 
 /* ---------- badges ---------- */

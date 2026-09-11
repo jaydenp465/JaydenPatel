@@ -659,6 +659,35 @@ p.wide { max-width: none; }
 .project-inprogress h3 { font-size: 1rem; margin: 0; }
 .project-inprogress p { margin: 0.25rem 0 0; color: var(--ink-muted); font-size: 0.9rem; }
 
+/* ---------- resume PDF preview ---------- */
+
+.resume-embed {
+  display: block;
+  width: 100%;
+  max-width: 850px;
+  aspect-ratio: 8.5 / 11;
+  margin: 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--bg-card);
+}
+.resume-embed-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  color: var(--ink-muted);
+  padding: 2rem;
+}
+.resume-embed-fallback code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--blue-tint);
+  padding: 0.1em 0.4em;
+  border-radius: 3px;
+}
+
 /* ---------- buttons ---------- */
 
 .btn {

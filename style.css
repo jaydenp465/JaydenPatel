@@ -662,23 +662,32 @@ p.wide { max-width: none; }
 /* ---------- resume PDF preview ---------- */
 
 .resume-embed {
-  display: block;
+  display: flex;
+  justify-content: center;
   width: 100%;
   max-width: 850px;
-  aspect-ratio: 8.5 / 11;
   margin: 0 auto;
   border: 1px solid var(--line);
   border-radius: 6px;
   background: var(--bg-card);
+  overflow: hidden;
+}
+.resume-embed canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 .resume-embed-fallback {
-  display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  width: 100%;
+  min-height: 500px;
   text-align: center;
   color: var(--ink-muted);
   padding: 2rem;
+}
+.resume-embed-fallback:not([hidden]) {
+  display: flex;
 }
 .resume-embed-fallback code {
   font-family: var(--font-mono);

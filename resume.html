@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=26">
+<link rel="stylesheet" href="style.css?v=28">
 </head>
 <body>
 
@@ -38,11 +38,12 @@
   </div>
 
   <section class="wrap section" style="border-top: none; padding-top: 0;">
-    <object data="resume.pdf" type="application/pdf" class="resume-embed" aria-label="Jayden Patel — resume preview">
-      <div class="resume-embed-fallback">
-        <p>Add <code>resume.pdf</code> to the site folder to show a live preview here.</p>
+    <div class="resume-embed" id="resume-embed" aria-label="Jayden Patel — resume preview">
+      <canvas id="resume-canvas"></canvas>
+      <div class="resume-embed-fallback" id="resume-fallback" hidden>
+        <p>Add <code>resume.pdf</code> to the site folder to show a preview here.</p>
       </div>
-    </object>
+    </div>
   </section>
 </main>
 
@@ -53,5 +54,7 @@
   </div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="resume-preview.js?v=1" defer></script>
 </body>
 </html>

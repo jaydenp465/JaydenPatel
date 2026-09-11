@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=7">
+<link rel="stylesheet" href="style.css?v=20">
 </head>
 <body>
 
@@ -34,81 +34,110 @@
 
   <div class="wrap">
 
-    <div class="project">
-      <div class="media">
-        <div class="figure-row">
-          <div class="figure" style="aspect-ratio: 4/3;">
-            <span class="fig-num">fig. 01</span>
-            <p>Arm assembly photo</p>
+    <div class="project-section-head first">
+      <span class="group-label">Personal projects</span>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <!-- To add a real photo, replace a placeholder slide below with:
+             <div class="slide"><img src="assets/projects/arm/1.jpg" alt="Describe the photo"></div> -->
+        <div class="slideshow" data-autoplay tabindex="0" role="group" aria-roledescription="carousel" aria-label="3-DOF robotic arm photos">
+          <div class="slides">
+            <div class="slide ph"><span class="fig-num">FIG. 1</span><span>Full arm assembly</span></div>
+            <div class="slide ph"><span class="fig-num">FIG. 2</span><span>Joint / actuator close-up</span></div>
+            <div class="slide ph"><span class="fig-num">FIG. 3</span><span>Controller &amp; wiring</span></div>
           </div>
-          <div class="figure" style="aspect-ratio: 4/3;">
-            <span class="fig-num">fig. 02</span>
-            <p>Inverse kinematics solver, target vs. solved end-effector position</p>
-          </div>
-          <div class="figure" style="aspect-ratio: 4/3;">
-            <span class="fig-num">fig. 03</span>
-            <p>PID step response during tuning</p>
-          </div>
+          <button type="button" class="slide-nav prev" aria-label="Previous photo">&#8249;</button>
+          <button type="button" class="slide-nav next" aria-label="Next photo">&#8250;</button>
+          <div class="slide-dots" role="tablist" aria-label="Choose photo"></div>
+        </div>
+        <div class="card-body">
+          <span class="project-eyebrow">Robotics</span>
+          <h3>3-DOF robotic arm</h3>
+          <p>Forward and inverse kinematics plus a PID control loop for a three-degree-of-freedom arm, built from the ground up to learn hardware and control.</p>
         </div>
       </div>
-      <div class="body">
-        <span class="project-eyebrow">Personal project &middot; robotics</span>
-        <h3>3-DOF robotic arm</h3>
-        <div class="metrics-row" style="margin-bottom: 0.9rem;">
-          <span class="badge">3 degrees of freedom</span>
-          <span class="badge">forward + inverse kinematics</span>
-          <span class="badge">PID control</span>
+
+      <div class="project-card">
+        <div class="slideshow" data-autoplay tabindex="0" role="group" aria-roledescription="carousel" aria-label="Fan-speed color indicator photos">
+          <div class="slides">
+            <div class="slide ph"><span class="fig-num">FIG. 1</span><span>Finished circuit</span></div>
+            <div class="slide ph"><span class="fig-num">FIG. 2</span><span>RGB LED in action</span></div>
+            <div class="slide ph"><span class="fig-num">FIG. 3</span><span>Sensor wiring detail</span></div>
+          </div>
+          <button type="button" class="slide-nav prev" aria-label="Previous photo">&#8249;</button>
+          <button type="button" class="slide-nav next" aria-label="Next photo">&#8250;</button>
+          <div class="slide-dots" role="tablist" aria-label="Choose photo"></div>
         </div>
-        <p style="color: var(--ink-muted);">
-          A three-degree-of-freedom robotic arm built to learn hardware and
-          control from the ground up. Covers forward and inverse
-          kinematics for the arm's joint chain, and a PID control loop
-          tuned to drive the physical arm to commanded positions.
-        </p>
-        <!-- TODO: replace with your specific parts list and software stack -->
-        <p class="tools" style="font-style: italic; color: var(--ink-faint);">Add your parts list and software stack here.</p>
+        <div class="card-body">
+          <span class="project-eyebrow">Embedded</span>
+          <h3>Fan-speed color indicator</h3>
+          <p>A circuit that senses a fan's rotational speed and lights an RGB LED a different color per speed range — a small project in sensing and embedded logic.</p>
+        </div>
       </div>
+
     </div>
 
-    <div class="project">
-      <div class="media">
-        <div class="figure" style="aspect-ratio: 16/10; margin-bottom: 0.75rem;">
-          <span class="fig-num">fig. 01</span>
-          <p>Demo video — LEDs indicating fan speed live</p>
+    <div class="project-section-head">
+      <span class="group-label">Club projects</span>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="slideshow" data-autoplay tabindex="0" role="group" aria-roledescription="carousel" aria-label="Brake rotor and wheel hub design photos">
+          <div class="slides">
+            <div class="slide ph"><span class="fig-num">FIG. 1</span><span>Rotor CAD model</span></div>
+            <div class="slide ph"><span class="fig-num">FIG. 2</span><span>Machined rotor</span></div>
+            <div class="slide ph"><span class="fig-num">FIG. 3</span><span>Installed on vehicle</span></div>
+          </div>
+          <button type="button" class="slide-nav prev" aria-label="Previous photo">&#8249;</button>
+          <button type="button" class="slide-nav next" aria-label="Next photo">&#8250;</button>
+          <div class="slide-dots" role="tablist" aria-label="Choose photo"></div>
         </div>
-        <svg viewBox="0 0 340 150" width="100%" height="auto" role="img" aria-labelledby="circuitTitle circuitDesc" style="border: 1px solid var(--line); border-radius: 4px; background: var(--bg-card);">
-          <title id="circuitTitle">Block diagram of the fan-speed indicator circuit</title>
-          <desc id="circuitDesc">Sensor connects to a microcontroller, which drives an RGB LED, arranged left to right.</desc>
-          <defs>
-            <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-              <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--blue)"/>
-            </marker>
-          </defs>
-          <rect x="14" y="55" width="88" height="42" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
-          <text x="58" y="80" text-anchor="middle" font-family="var(--font-mono)" font-size="12" fill="var(--ink)">sensor</text>
-          <line x1="102" y1="76" x2="146" y2="76" stroke="var(--blue)" stroke-width="2" marker-end="url(#arrow)"/>
-          <rect x="150" y="55" width="88" height="42" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
-          <text x="194" y="80" text-anchor="middle" font-family="var(--font-mono)" font-size="12" fill="var(--ink)">MCU</text>
-          <line x1="238" y1="76" x2="282" y2="76" stroke="var(--blue)" stroke-width="2" marker-end="url(#arrow)"/>
-          <rect x="286" y="55" width="46" height="42" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
-          <text x="309" y="80" text-anchor="middle" font-family="var(--font-mono)" font-size="10" fill="var(--ink)">RGB</text>
-        </svg>
-      </div>
-      <div class="body">
-        <span class="project-eyebrow">Personal project &middot; embedded</span>
-        <h3>Fan-speed color indicator</h3>
-        <div class="metrics-row" style="margin-bottom: 0.9rem;">
-          <span class="badge">speed sensing</span>
-          <span class="badge">embedded logic</span>
+        <div class="card-body">
+          <span class="project-eyebrow">Longhorn Baja Racing SAE</span>
+          <h3>Brake rotor &amp; wheel hub design</h3>
+          <p>Reduced brake rotor mass by 30% through geometry optimization for an off-road vehicle, while maintaining structural and thermal performance within a $25,000 budget.</p>
         </div>
-        <p style="color: var(--ink-muted);">
-          A circuit that senses a fan's rotational speed and lights an RGB
-          LED a different color for each speed range — a small hands-on
-          project in sensing and embedded logic.
-        </p>
-        <!-- TODO: replace with your specific parts list and software stack -->
-        <p class="tools" style="font-style: italic; color: var(--ink-faint);">Add your parts list and software stack here.</p>
       </div>
+
+      <div class="project-card">
+        <div class="slideshow" data-autoplay tabindex="0" role="group" aria-roledescription="carousel" aria-label="Hyperloop bogie and braking system photos">
+          <div class="slides">
+            <div class="slide ph"><span class="fig-num">FIG. 1</span><span>Bogie assembly</span></div>
+            <div class="slide ph"><span class="fig-num">FIG. 2</span><span>Braking system detail</span></div>
+            <div class="slide ph"><span class="fig-num">FIG. 3</span><span>Pod at competition</span></div>
+          </div>
+          <button type="button" class="slide-nav prev" aria-label="Previous photo">&#8249;</button>
+          <button type="button" class="slide-nav next" aria-label="Next photo">&#8250;</button>
+          <div class="slide-dots" role="tablist" aria-label="Choose photo"></div>
+        </div>
+        <div class="card-body">
+          <span class="project-eyebrow">Texas Guadaloop</span>
+          <h3>Hyperloop bogie &amp; braking system</h3>
+          <p>Designed a levitating hyperloop bogie and a fail-safe pneumatic braking system with spring-applied calipers — 2x SpaceX Hyperloop Pod Competition Innovation Award winner.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="slideshow" data-autoplay tabindex="0" role="group" aria-roledescription="carousel" aria-label="Robomaster Sentry turret photos">
+          <div class="slides">
+            <div class="slide ph"><span class="fig-num">FIG. 1</span><span>Sentry robot, turret closed</span></div>
+            <div class="slide ph"><span class="fig-num">FIG. 2</span><span>Dual-turret CAD</span></div>
+            <div class="slide ph"><span class="fig-num">FIG. 3</span><span>Team at competition</span></div>
+          </div>
+          <button type="button" class="slide-nav prev" aria-label="Previous photo">&#8249;</button>
+          <button type="button" class="slide-nav next" aria-label="Next photo">&#8250;</button>
+          <div class="slide-dots" role="tablist" aria-label="Choose photo"></div>
+        </div>
+        <div class="card-body">
+          <span class="project-eyebrow">UT IEEE Robotics and Automation Society</span>
+          <h3>Robomaster Sentry turret</h3>
+          <p>Led a team of 5 to architect a dual independently-rotating turret for a Robomaster Sentry robot, increasing projectile capacity by 29% with full-field defensive coverage.</p>
+        </div>
+      </div>
+
     </div>
 
   </div>
@@ -147,5 +176,7 @@
   </div>
 </footer>
 
+
+<script src="slideshow.js" defer></script>
 </body>
 </html>

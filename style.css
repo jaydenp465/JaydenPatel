@@ -386,6 +386,9 @@ p.wide { max-width: none; }
 .exp-card .exp-right .metrics-row {
   margin-bottom: 0.75rem;
 }
+.exp-card li {
+  max-width: none;
+}
 
 @media (max-width: 720px) {
   .exp-card {

@@ -18,7 +18,7 @@
   --blue-tint: #E8EFF6;
   --font-sans: "IBM Plex Sans", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
   --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
-  --container: 920px;
+  --container: 1180px;
 }
 
 * { box-sizing: border-box; }

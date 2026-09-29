@@ -563,7 +563,7 @@ p.wide { max-width: none; }
 .slideshow .slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 .slideshow .slide.ph {

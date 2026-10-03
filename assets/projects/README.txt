@@ -4,7 +4,7 @@ Project photos live in these folders:
   research/            Spark plug electrode erosion research
   baja-brakes/         Longhorn Baja brake rotor & wheel hub
   guadaloop-bogie/     Texas Guadaloop hyperloop bogie & braking
-  ras-turret/          IEEE RAS Robomaster Sentry turret (still empty — no photos yet)
+  ras-turret/          IEEE RAS Robomaster Sentry turret
 
 Each project card in projects.html is a .slideshow with one <div class="slide">
 per photo:

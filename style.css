@@ -37,15 +37,18 @@ body {
 
 /* Home page only: header + hero fill exactly one viewport, no footer,
    so the hero photo runs to the bottom edge of the screen. */
-body.home {
+body.home,
+body.contact {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-body.home header.site {
+body.home header.site,
+body.contact header.site {
   flex-shrink: 0;
 }
-body.home main {
+body.home main,
+body.contact main {
   flex: 1;
   display: flex;
   min-height: 0;
@@ -738,25 +741,98 @@ p.wide { max-width: none; }
 
 /* ---------- contact ---------- */
 
-.contact-list {
+/* Full-viewport Earth photo (NASA ISS image iss071e449837) with a frosted
+   glass card, the daytime counterpart to the dark home page hero. */
+.contact-hero {
+  position: relative;
+  flex: 1;
   display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
-  margin-top: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  overflow: hidden;
+  color: #fff;
+  background-image:
+    linear-gradient(180deg, rgba(6, 13, 23, 0.35), rgba(10, 22, 40, 0.15)),
+    url('images/contact-earth.jpg');
+  background-size: cover;
+  background-position: center 35%;
+}
+.contact-card {
+  width: min(620px, 100%);
+  padding: 2.75rem 2.75rem 2.25rem;
+  background: rgba(8, 20, 38, 0.52);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 12px;
+  -webkit-backdrop-filter: blur(14px) saturate(1.1);
+  backdrop-filter: blur(14px) saturate(1.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+.contact-card .kicker {
+  color: #A9C3E0;
+  margin-bottom: 1rem;
+}
+.contact-card h1 {
+  color: #fff;
+  margin: 0 0 0.8rem;
+  font-size: clamp(2.6rem, 5.5vw, 3.8rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.contact-card .lede {
+  color: #D3DFEE;
+  margin: 0 0 2rem;
+  max-width: 40ch;
+}
+.contact-rows {
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
 }
 .contact-row {
   display: flex;
-  gap: 0.75rem;
   align-items: baseline;
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 0.9rem;
+  gap: 1rem;
+  padding: 1.05rem 0.25rem;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+  transition: background 0.15s ease, padding 0.15s ease;
+}
+a.contact-row:hover {
+  background: rgba(255, 255, 255, 0.08);
+  padding-left: 0.75rem;
+  text-decoration: none;
 }
 .contact-row .label {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--ink-faint);
-  width: 90px;
+  width: 84px;
   flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #A9C3E0;
+}
+.contact-row .val {
+  flex: 1;
+  min-width: 0;
+  font-size: 1.05rem;
+  overflow-wrap: anywhere;
+}
+.contact-row .go {
+  color: #A9C3E0;
+  font-size: 1.1rem;
+}
+.photo-credit {
+  position: absolute;
+  right: 1.25rem;
+  bottom: 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+@media (max-width: 720px) {
+  .contact-card { padding: 2rem 1.5rem 1.5rem; }
+  .contact-row { flex-wrap: wrap; gap: 0.2rem 1rem; }
+  .contact-row .label { width: 100%; }
+  .contact-row .val { font-size: 1rem; }
 }
 
 /* ---------- hero (home page) ---------- */

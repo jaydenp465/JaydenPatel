@@ -10,9 +10,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=32">
+<link rel="stylesheet" href="style.css?v=34">
 </head>
-<body>
+<body class="contact">
 
 <header class="site">
   <div class="wrap">
@@ -23,44 +23,29 @@
       <a href="experience.html?v=1">Experience</a>
       <a href="projects.html?v=1">Projects</a>
       <a href="resume.html?v=1">Resume</a>
-      <a href="contact.html?v=1" class="active">Contact</a>
+      <a href="contact.html?v=2" class="active">Contact</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <div class="wrap page-head">
-    <span class="kicker">Get in touch</span>
-    <h1>Contact</h1>
-    <p class="lede">Reach out about internships, research, or anything else.</p>
-  </div>
-
-  <section class="wrap section" style="border-top: none; padding-top: 0;">
-    <div class="contact-list">
-      <div class="contact-row">
-        <span class="label">email</span>
-        <a href="mailto:Jayden.Patel@utexas.edu">Jayden.Patel@utexas.edu</a>
+  <section class="contact-hero">
+    <div class="contact-card">
+      <span class="kicker">Get in touch</span>
+      <h1>Let's Talk</h1>
+      <p class="lede">Reach out about internships, research, or anything else.</p>
+      <div class="contact-rows">
+        <a class="contact-row" href="mailto:Jayden.Patel@utexas.edu"><span class="label">Email</span><span class="val">Jayden.Patel@utexas.edu</span><span class="go" aria-hidden="true">&#8599;</span></a>
+        <a class="contact-row" href="https://www.linkedin.com/in/jaydenpatel1"><span class="label">LinkedIn</span><span class="val">linkedin.com/in/jaydenpatel1</span><span class="go" aria-hidden="true">&#8599;</span></a>
+        <a class="contact-row" href="resume.pdf"><span class="label">Resume</span><span class="val">Download PDF</span><span class="go" aria-hidden="true">&#8599;</span></a>
+        <!-- Phone number left off the public site by default for privacy —
+             add it here as another .contact-row if you'd rather include it. -->
+        <div class="contact-row"><span class="label">Location</span><span class="val">Austin, TX</span></div>
       </div>
-      <div class="contact-row">
-        <span class="label">linkedin</span>
-        <a href="https://www.linkedin.com/in/jaydenpatel1">linkedin.com/in/jaydenpatel1</a>
-      </div>
-      <div class="contact-row">
-        <span class="label">location</span>
-        <span style="color: var(--ink-muted);">Austin, TX</span>
-      </div>
-      <!-- Phone number left off the public site by default for privacy —
-           add it here as another .contact-row if you'd rather include it. -->
     </div>
+    <span class="photo-credit">Image: NASA</span>
   </section>
 </main>
-
-<footer class="site">
-  <div class="wrap">
-    <span>&copy; 2026 Jayden Patel</span>
-    <span><a href="mailto:Jayden.Patel@utexas.edu">Jayden.Patel@utexas.edu</a> · <a href="https://www.linkedin.com/in/jaydenpatel1">LinkedIn</a></span>
-  </div>
-</footer>
 
 </body>
 </html>

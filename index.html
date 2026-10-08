@@ -11,15 +11,35 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=40">
+<script>
+/* Decide before first paint whether to play the welcome intro: once per
+   browser session, never with reduced motion; add ?intro to the URL to replay. */
+(function () {
+  try {
+    if (new URLSearchParams(location.search).has('intro')) sessionStorage.removeItem('introSeen');
+    if (!sessionStorage.getItem('introSeen') && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('intro-play');
+    }
+  } catch (e) {}
+})();
+</script>
+<link rel="stylesheet" href="style.css?v=41">
 </head>
 <body class="home">
 
+<div class="intro" aria-hidden="true">
+  <div class="intro-inner">
+    <span class="intro-kicker">Welcome</span>
+    <div class="intro-line"><i></i></div>
+    <span class="intro-name">Jayden Patel</span>
+  </div>
+</div>
+
 <header class="site">
   <div class="wrap">
-    <a class="brand" href="index.html?v=7">Jayden Patel Portfolio</a>
+    <a class="brand" href="index.html?v=8">Jayden Patel Portfolio</a>
     <nav class="primary">
-      <a href="index.html?v=7" class="active">Home</a>
+      <a href="index.html?v=8" class="active">Home</a>
       <a href="about.html?v=5">About</a>
       <a href="experience.html?v=1">Experience</a>
       <a href="projects.html?v=1">Projects</a>
@@ -45,5 +65,6 @@
   </section>
 </main>
 
+<script src="intro.js?v=1" defer></script>
 </body>
 </html>
